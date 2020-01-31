@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: ENV['DB_USERNAME']
+  password: ENV['DB_PASSWORD']
+  host: ENV['DB_HOST']
+
+development:
+  <<: *default
+  database: cloud_ops_dev
+  pool: 5
+  
+
+test:
+  <<: *default
+  database: cloud_ops_test
+  pool: 5
